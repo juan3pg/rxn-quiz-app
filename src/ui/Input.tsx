@@ -1,5 +1,5 @@
-import { View, Text, TextInput, StyleSheet } from 'react-native';
-import { Colors } from '../../constants/styles';
+import { View, Text, TextInput, StyleSheet, KeyboardTypeOptions } from 'react-native';
+import { Colors } from '../constants/styles';
 
 interface InputProps {
   label: string,
@@ -21,7 +21,7 @@ function Input({
   return (
     <View style={styles.inputContainer}>
       <Text style={[styles.label, isInvalid && styles.labelInvalid]}>
-        {label}
+        { label }
       </Text>
       <TextInput
         style={[styles.input, isInvalid && styles.inputInvalid]}

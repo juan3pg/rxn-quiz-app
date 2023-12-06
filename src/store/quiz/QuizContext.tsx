@@ -34,7 +34,7 @@ export const QuizContextProvider = ({ children }: any ) => {
 
   return (
     <QuizContext.Provider value={{
-      quiz: quiz,
+      quiz,
       save,
       clear,
       respondQuestion

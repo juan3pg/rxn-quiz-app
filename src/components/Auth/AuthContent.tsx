@@ -9,7 +9,7 @@ interface LoginFormFields {
 }
 
 interface AuthContentProps {
-  onAuthenticate: (userName: string, password: string) => void;
+  onAuthenticate: () => void;
 }
 
 function AuthContent({ onAuthenticate }: AuthContentProps) {
@@ -31,7 +31,7 @@ function AuthContent({ onAuthenticate }: AuthContentProps) {
       setCredentialsInvalid({ userName: !userNameIsValid, password: !passwordIsValid });
       return;
     }
-    onAuthenticate( userName, password );
+    onAuthenticate();
   }
 
   return (

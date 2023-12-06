@@ -9,7 +9,7 @@ export const LoginScreen = () => {
 
   const authCtx = useContext(AuthContext);
 
-  async function loginHandler(email: string, password: string) {
+  async function loginHandler() {
     setIsAuthenticating(true);
     try {
       const token = 'authToken';

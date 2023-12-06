@@ -16,8 +16,8 @@ export const QuestionsList = ({ questions }: QuestionsListProps) => {
   const quizCtx = useContext(QuizContext)
 
   function showResultsHandler() {
-    const questionsAnswered = quizCtx.quiz.questions.filter((question) => !question.selected_answer)
-    if (questionsAnswered.length === quizCtx.quiz.questions.length) {
+    const questionsAnswered = quizCtx.quiz.questions.filter((question) => question.selected_answer);
+    if (questionsAnswered.length !== quizCtx.quiz.questions.length) {
       Alert.alert(
         'Can not continue!',
         'Please respond all questions in this quiz to see your results.'
