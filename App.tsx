@@ -1,6 +1,5 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import AppLoading from 'expo-app-loading';
 import { StatusBar } from 'expo-status-bar';
 import { useContext, useEffect, useState } from 'react';
 import { Colors } from './src/constants/styles';
@@ -12,7 +11,7 @@ import IconButton from './src/ui/IconButton';
 import { QuestionsScreen } from './src/screens/QuestionsScreen';
 import { ResultsScreen } from './src/screens/ResultsScreen';
 import { QuizContextProvider } from './src/store/quiz/QuizContext';
-
+import * as SplashScreen from 'expo-splash-screen';
 
 export type RootStackParams = {
   LoginScreen: undefined,
@@ -79,33 +78,31 @@ function Navigation() {
   );
 }
 
-
 function Root() {
-  const [isTryingLogin, setIsTryingLogin] = useState(true);
+  SplashScreen.preventAutoHideAsync();
+  const [appIsReady, setAppIsReady] = useState(false);
 
   const authCtx = useContext(AuthContext);
 
   useEffect(() => {
     async function fetchToken() {
       const storedToken = await AsyncStorage.getItem('token');
-
       if (storedToken) {
         authCtx.login(storedToken);
       }
-
-      setIsTryingLogin(false);
+      setAppIsReady(true);
+      await SplashScreen.hideAsync();
     }
 
     fetchToken();
   }, []);
 
-  if (isTryingLogin) {
-    return <AppLoading />;
+  if (!appIsReady) {
+    return null;
   }
 
   return <Navigation />;
 }
-
 
 export default function App() {
   return (
