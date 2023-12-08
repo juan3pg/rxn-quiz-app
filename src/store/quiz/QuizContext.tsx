@@ -1,6 +1,7 @@
 import { createContext, useReducer } from 'react';
 import { QuestionResult } from '../../interfaces/QuestionInterface';
 import { quizReducer } from './quizReducer';
+import { shuffleArray } from '../../utils/utils';
 
 export interface Quiz {
   questions: QuestionResult[];
@@ -22,10 +23,16 @@ export const QuizContext = createContext( {} as QuizContextProps );
 export const QuizContextProvider = ({ children }: any ) => {
   const [quiz, dispatch] = useReducer( quizReducer, quizInitialState );
   const save = (questions: QuestionResult[]) => {
-      dispatch({ type: 'save', payload: questions });
+    for (const key in questions) {
+      const question = questions[key];
+      question.shuffled_answers = question.incorrect_answers;
+      question.shuffled_answers.push(question.correct_answer);
+      question.shuffled_answers = shuffleArray(question.shuffled_answers);
+    }
+    dispatch({ type: 'save', payload: questions });
   }
   const clear = () => {
-      dispatch({ type: 'clear' });
+    dispatch({ type: 'clear' });
   }
   const respondQuestion = ( question: QuestionResult, answer: string ) => {
     question.selected_answer = answer;

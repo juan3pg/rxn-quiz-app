@@ -14,12 +14,9 @@ export const QuestionItem = ({ question, showResultsOnly }: QuestionItemProps) =
 
   let answers: string[] = [];  
   if (showResultsOnly) {
-	  answers.push(question.selected_answer);
+    answers.push(question.selected_answer);
   } else {
-    question.incorrect_answers.map((answer) => {
-	  answers.push(answer);
-    })
-    answers.push(question.correct_answer);
+    answers = question.shuffled_answers;
   }
 
   return (

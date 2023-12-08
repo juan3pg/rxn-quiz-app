@@ -8,4 +8,5 @@ export interface QuestionResult {
   correct_answer: string;
   incorrect_answers: string[];
   selected_answer: string;
+  shuffled_answers: string[];
 }
