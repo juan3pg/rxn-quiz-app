@@ -4,7 +4,7 @@ interface LoadingOverlayProps {
   message: string;
 } 
 
-function LoadingOverlay({ message }: LoadingOverlayProps) {
+export const LoadingOverlay = ({ message }: LoadingOverlayProps) => {
   return (
     <View style={ styles.rootContainer }>
       <Text style={ styles.message }>{ message }</Text>
@@ -12,8 +12,6 @@ function LoadingOverlay({ message }: LoadingOverlayProps) {
     </View>
   );
 }
-
-export default LoadingOverlay;
 
 const styles = StyleSheet.create({
   rootContainer: {

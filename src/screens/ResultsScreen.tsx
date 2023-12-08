@@ -3,7 +3,7 @@ import { FlatList, StyleSheet, Text, View } from 'react-native'
 import { QuizContext } from '../store/quiz/QuizContext'
 import { useNavigation } from '@react-navigation/native';
 import { QuestionItem } from '../components/Questions/QuestionItem';
-import Button from '../ui/Button';
+import { Button } from '../ui/Button';
 
 export const ResultsScreen = () => {
   const navigation = useNavigation<any>();

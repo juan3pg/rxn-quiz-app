@@ -7,7 +7,7 @@ interface ButtonProps {
   onPress: () => void
 }
 
-function Button({ children, onPress }: ButtonProps) {
+export const Button = ({ children, onPress }: ButtonProps) => {
   return (
     <Pressable
       style={({ pressed }) => [styles.button, pressed && styles.pressed]}
@@ -19,8 +19,6 @@ function Button({ children, onPress }: ButtonProps) {
     </Pressable>
   );
 }
-
-export default Button;
 
 const styles = StyleSheet.create({
   button: {

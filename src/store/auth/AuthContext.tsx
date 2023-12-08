@@ -15,7 +15,7 @@ export const AuthContext = createContext({
   logout: () => {},
 } as AuthContextProps);
 
-function AuthContextProvider({ children } : any) {
+export const AuthContextProvider = ({ children } : any) =>{
   const [authToken, setAuthToken] = useState<string | undefined>();
 
   function login(token: string) {
@@ -37,5 +37,3 @@ function AuthContextProvider({ children } : any) {
 
   return <AuthContext.Provider value={ value }>{ children }</AuthContext.Provider>;
 }
-
-export default AuthContextProvider;

@@ -5,7 +5,7 @@ interface ErrorOverlayProps {
   message: string;
 }
 
-function ErrorOverlay({ message }: ErrorOverlayProps) {
+export const ErrorOverlay = ({ message }: ErrorOverlayProps) => {
   return (
     <View style={ styles.container }>
       <Text style={ [styles.text, styles.title] }>An error occurred!</Text>
@@ -13,8 +13,6 @@ function ErrorOverlay({ message }: ErrorOverlayProps) {
     </View>
   );
 }
-
-export default ErrorOverlay;
 
 const styles = StyleSheet.create({
   container: {

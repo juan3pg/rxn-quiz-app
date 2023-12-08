@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Alert, FlatList, StyleSheet, Text, View } from 'react-native';
 import { QuestionResult } from '../../interfaces/QuestionInterface';
 import { QuestionItem } from './QuestionItem';
-import Button from '../../ui/Button';
+import { Button } from '../../ui/Button';
 import { useNavigation } from '@react-navigation/native';
 import { QuizContext } from '../../store/quiz/QuizContext';
 

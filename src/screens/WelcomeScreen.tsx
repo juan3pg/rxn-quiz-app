@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { Colors } from '../constants/styles';
-import Button from '../ui/Button';
+import { Button } from '../ui/Button';
 import { useNavigation } from '@react-navigation/native';
 
 export const WelcomeScreen = () => {

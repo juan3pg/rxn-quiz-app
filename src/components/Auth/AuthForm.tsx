@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-import Button from '../../ui/Button';
-import Input from '../../ui/Input';
+import { Button } from '../../ui/Button';
+import { Input } from '../../ui/Input';
 
 export interface CredentialsInvalidProps {
   userName: boolean;
@@ -13,7 +13,7 @@ interface AuthFormProps {
   credentialsInvalid: CredentialsInvalidProps;
 }
 
-function AuthForm( { onSubmit, credentialsInvalid }: AuthFormProps ) {
+export const AuthForm = ({ onSubmit, credentialsInvalid }: AuthFormProps) => {
   const [enteredUserName, setEnteredUserName] = useState('adminUser');
   const [enteredPassword, setEnteredPassword] = useState('12345678');
 
@@ -55,8 +55,6 @@ function AuthForm( { onSubmit, credentialsInvalid }: AuthFormProps ) {
     </View>
   );
 }
-
-export default AuthForm;
 
 const styles = StyleSheet.create({
   buttons: {

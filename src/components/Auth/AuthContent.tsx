@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Alert, StyleSheet, View } from 'react-native';
-import AuthForm, { CredentialsInvalidProps } from './AuthForm';
+import { AuthForm, CredentialsInvalidProps } from './AuthForm';
 import { Colors } from '../../constants/styles';
 
 interface LoginFormFields {
@@ -12,7 +12,7 @@ interface AuthContentProps {
   onAuthenticate: () => void;
 }
 
-function AuthContent({ onAuthenticate }: AuthContentProps) {
+export const AuthContent = ({ onAuthenticate }: AuthContentProps) => {
 
   const [credentialsInvalid, setCredentialsInvalid] = useState<CredentialsInvalidProps>({
     userName: false,
@@ -43,8 +43,6 @@ function AuthContent({ onAuthenticate }: AuthContentProps) {
     </View>
   );
 }
-
-export default AuthContent;
 
 const styles = StyleSheet.create({
   authContent: {

@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { View } from 'react-native'
 import { fetchQuestions } from '../api/openTriviaDB';
-import ErrorOverlay from '../ui/ErrorOverlay';
-import LoadingOverlay from '../ui/LoadingOverlay';
+import { ErrorOverlay } from '../ui/ErrorOverlay';
+import { LoadingOverlay } from '../ui/LoadingOverlay';
 import { QuestionsList } from '../components/Questions/QuestionsList';
 import { QuestionResult } from '../interfaces/QuestionInterface';
 import { QuizContext } from '../store/quiz/QuizContext';

@@ -10,14 +10,14 @@ interface InputProps {
   isInvalid?: boolean,
 }
 
-function Input({
+export const Input = ({
   label,
   keyboardType,
   secureTextEntry,
   onChangeText,
   value,
   isInvalid,
-}: InputProps) {
+}: InputProps) => {
   return (
     <View style={ styles.inputContainer }>
       <Text style={ [styles.label, isInvalid && styles.labelInvalid] }>
@@ -34,8 +34,6 @@ function Input({
     </View>
   );
 }
-
-export default Input;
 
 const styles = StyleSheet.create({
   inputContainer: {
