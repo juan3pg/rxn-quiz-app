@@ -19,17 +19,17 @@ function Input({
   isInvalid,
 }: InputProps) {
   return (
-    <View style={styles.inputContainer}>
-      <Text style={[styles.label, isInvalid && styles.labelInvalid]}>
+    <View style={ styles.inputContainer }>
+      <Text style={ [styles.label, isInvalid && styles.labelInvalid] }>
         { label }
       </Text>
       <TextInput
-        style={[styles.input, isInvalid && styles.inputInvalid]}
+        style={ [styles.input, isInvalid && styles.inputInvalid] }
         autoCapitalize="none"
-        keyboardType={keyboardType}
-        secureTextEntry={secureTextEntry}
-        onChangeText={onChangeText}
-        value={value}
+        keyboardType={ keyboardType }
+        secureTextEntry={ secureTextEntry }
+        onChangeText={ onChangeText }
+        value={ value }
       />
     </View>
   );
